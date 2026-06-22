@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budoucnost: Hrací cesta</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <div class="mandala mandala-top-left" aria-hidden="true"></div>
+    <header class="game-header">
+      <h1>Buddhistické putování </h1>
+      <p class="subtitle">Objev svět buddhismu, učení Buddhy, klid chrámů a radostné cesty .</p>
+    </header>
+
+    <main class="game-main">
+      <section id="intro" class="screen active">
+        <div class="card intro-card">
+          <p>Vítej ve hře o buddhismu. Procházka chrámem, meditace s mniši a přátelské poznávání ti ukáže, jak může být laskavá a barevná budoucnost.</p>
+          <img src="assets/buddha.svg" alt="Buddha" class="hero-image" />
+          <button id="startButton" class="action-button">Začít buddhistické dobrodružství 🙏</button>
+        </div>
+      </section>
+
+      <section id="choice" class="screen">
+        <div class="card">
+          <h2>Vyber si svou cestu</h2>
+          <p>Vyber si jeden z buddhistických zážitků a objev, jaké moudrosti skrývá každý krok.</p>
+          <div class="choices">
+            <button class="choice-button" data-choice="meditation">
+              <span class="choice-title">Meditace a klid 🧘</span>
+              <span class="choice-description">Uklidni mysl a poznej vnitřní ticho.</span>
+            </button>
+            <button class="choice-button" data-choice="wisdom">
+              <span class="choice-title">Učení Buddhy 📜</span>
+              <span class="choice-description">Ponoř se do moudrosti a soucitu.</span>
+            </button>
+            <button class="choice-button" data-choice="temples">
+              <span class="choice-title">Chrámové putování 🛕</span>
+              <span class="choice-description">Projdi se mezi chrámy a poznej jejich klid.</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="temple" class="screen">
+        <div class="card">
+          <h2>Chrámová výprava</h2>
+          <img src="assets/temple.svg" alt="Chrám" class="section-image" />
+          <p id="templeText">Vstup do chrámu a vyber, co chceš jako první prozkoumat.</p>
+          <div class="choices temple-actions">
+            <button class="choice-button temple-button" data-action="garden">
+              <img src="assets/garden.svg" alt="Nádvoří" class="icon" />
+              Prozkoumat nádvoří
+            </button>
+            <button class="choice-button temple-button" data-action="monk">
+              <img src="assets/monk.svg" alt="Mnich" class="icon" />
+              Pozdravit mnicha
+            </button>
+            <button class="choice-button temple-button" data-action="lamp">
+              <img src="assets/lamp.svg" alt="Lampa" class="icon" />
+              Zapal lampu
+            </button>
+          </div>
+          <div class="temple-status" id="templeProgress">Úkoly dokončené: 0/3</div>
+          <button id="templeBack" class="action-button">Vrátit se na volby</button>
+        </div>
+      </section>
+
+      <section id="result" class="screen">
+        <div class="card">
+          <h2 id="resultTitle">Tvůj buddhistický příběh ✨</h2>
+          <p id="resultText">Zde se objeví laskavá zpráva o buddhistické cestě.</p>
+          <button id="againButton" class="action-button">Promiň a začnu znovu 🌟</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="game-footer">
+      <p>Hra je jednoduchá a přátelská. Každý může pochopit, jak je budoucnost plná dobrých možností.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

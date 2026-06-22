@@ -1,0 +1,241 @@
+:root {
+  --bg: #fff4e5;
+  --card: #fff7ed;
+  --accent: #ff7a00;
+  --accent-soft: #ffb65c;
+  --text: #3d2b18;
+  --muted: #6b513b;
+  --shadow: 0 18px 36px rgba(147, 93, 28, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fff4e5;
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.game-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+.mandala {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 196, 110, 0.7) 18%, rgba(255, 186, 84, 0.45) 28%, rgba(255, 153, 51, 0.23) 36%, transparent 40%),
+    repeating-conic-gradient(from 0deg, rgba(255, 156, 65, 0.45) 0deg 8deg, transparent 8deg 16deg);
+  filter: drop-shadow(0 8px 14px rgba(255, 148, 0, 0.1));
+  pointer-events: none;
+}
+
+.mandala::before {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 238, 195, 0.8) 24%, transparent 26%);
+}
+
+.mandala-top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.game-header,
+.game-footer {
+  text-align: center;
+}
+
+.game-header h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+
+.game-main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px 0;
+}
+
+.screen {
+  max-width: 560px;
+  width: 100%;
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  padding: 32px;
+  border: 1px solid rgba(255, 122, 0, 0.14);
+}
+
+.hero-image,
+.section-image {
+  display: block;
+  margin: 22px auto 16px;
+  max-width: 220px;
+  width: 100%;
+}
+
+.temple-actions {
+  gap: 16px;
+}
+
+.temple-button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.intro-card {
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(255, 210, 110, 0.9)) 1;
+  background: radial-gradient(circle at top left, rgba(255, 233, 188, 0.6), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 188, 115, 0.2), transparent 30%),
+    var(--card);
+}
+
+.hero-symbol {
+  margin: 16px auto 0;
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #c15a05;
+  font-weight: 700;
+}
+
+.accent-line {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  background: rgba(255, 186, 84, 0.15);
+  color: #4b2b0c;
+  font-weight: 700;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+}
+
+.card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.choice-button,
+.action-button {
+  min-height: 54px;
+}
+
+.choices,
+.button-row {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+  justify-items: center;
+}
+
+.card {
+  text-align: center;
+}
+
+.choice-button,
+.action-button {
+  border: 1px solid rgba(255, 175, 65, 0.45);
+  border-radius: 22px;
+  padding: 18px 24px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 125, 0, 0.95), rgba(255, 190, 90, 0.95));
+  box-shadow: 0 16px 28px rgba(255, 128, 0, 0.18);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.choice-button {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  text-align: center;
+  min-height: 88px;
+  padding: 18px 20px;
+}
+
+.choice-title {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.choice-description {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.choice-button:hover,
+.action-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 145, 0, 0.98), rgba(255, 205, 105, 0.98));
+}
+
+.choice-button:focus,
+.action-button:focus {
+  outline: 3px solid rgba(255, 190, 90, 0.35);
+  outline-offset: 4px;
+}
+
+.game-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 24px;
+  }
+
+  .choices,
+  .button-row {
+    gap: 12px;
+  }
+}
