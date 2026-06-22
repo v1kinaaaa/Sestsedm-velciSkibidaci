@@ -64,7 +64,26 @@
             </button>
           </div>
           <div class="temple-status" id="templeProgress">Úkoly dokončené: 0/3</div>
+          <div id="questLog" class="quest-log" aria-live="polite"></div>
+          <div class="upload-row">
+            <label for="imageInput" class="action-button" id="uploadImageBtn">Nahrát vlastní obrázek</label>
+            <input id="imageInput" type="file" accept="image/*" style="display:none" />
+          </div>
+          <div class="badge-area" id="badgeArea" aria-hidden="true"></div>
           <button id="templeBack" class="action-button">Vrátit se na volby</button>
+          <div id="badgeModal" class="modal" aria-hidden="true">
+            <div class="modal-card">
+              <h3>Odměna 🎉</h3>
+              <p id="badgeText">Získal jsi buddhistický odznak za průzkum chrámu.</p>
+              <button id="closeBadge" class="action-button">Zavřít</button>
+            </div>
+          </div>
+          <div id="imageModal" class="image-modal" aria-hidden="true">
+            <div class="image-modal-card">
+              <button id="closeImage" class="action-button">Zavřít obrázek</button>
+              <img id="imagePreview" src="" alt="Nahraný obrázek" />
+            </div>
+          </div>
         </div>
       </section>
 
